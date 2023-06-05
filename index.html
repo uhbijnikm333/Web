@@ -25,7 +25,23 @@
         </div >
 
     </div>
+    <div class="container"  id="countdown"></div>
 
+    <script>
+        // 設定時間
+        let second = 10;
+
+        // 定義計時器
+        let secondDown = setInterval(function() {
+            second--;
+            document.getElementById("countdown").innerHTML = second + " 秒後自動重新整理";
+            if (second === 0) {
+                clearInterval(secondDown);
+
+                location.reload();
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>
